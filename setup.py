@@ -24,7 +24,6 @@ additionnal_requires = map(lambda s: extract_private_package(s), dependency_link
 install_requires.extend(additionnal_requires)
 
 scripts = ['bin/nfs-ganesha-export-api']
-pkgdir = {'': 'nfsapi'}
 
 setup(
     name='nfs-ganesha-export-api',
@@ -36,7 +35,6 @@ setup(
     author_email='maintainers@kowabunga.cloud',
     url='https://github.com/kowabunga-cloud/nfs-ganesha-export-api',
     scripts=scripts,
-    package_dir=pkgdir,
     packages=find_packages(),
     platforms=['All'],
     license='Apache 2.0',
