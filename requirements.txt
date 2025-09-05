@@ -1,0 +1,2 @@
+# List of requires python packages
+bottle
