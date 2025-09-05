@@ -1,0 +1,38 @@
+#!/usr/bin/env python3
+# Copyright (c) The Kowabunga Project
+# Apache License, Version 2.0 (see LICENSE or https://www.apache.org/licenses/LICENSE-2.0.txt)
+# SPDX-License-Identifier: Apache-2.0
+
+import argparse
+import yaml
+import sys
+
+from pathlib import Path
+
+from nfsapi.common import APP_DESCRIPTION
+from nfsapi.exports import GaneshaExportConfig
+from nfsapi.api import RestServer
+
+BASE_API_CONFIG_FILE = '/etc/ganesha/api.conf'
+
+# main
+if __name__ == "__main__":
+    # parse command-line
+    parser = argparse.ArgumentParser(formatter_class=argparse.RawDescriptionHelpFormatter, description=APP_DESCRIPTION)
+    parser.add_argument('-c', '--config', action='store', default=BASE_API_CONFIG_FILE,
+                        help=f'configuration file (default: {BASE_API_CONFIG_FILE}')
+    parser.add_argument('-d', '--debug', action='store_true', default=False,
+                        help='Enable debugging information')
+    parser.add_argument('-r', '--reload', action='store_true', default=False,
+                        help='Enable web-server auto-reloader (DEV feature)')
+    args = parser.parse_args()
+
+    config = yaml.safe_load(Path(args.config).read_text())
+    http = config.get('http')
+    host = http.get('host')
+    port = http.get('port')
+    exports = config.get('nfs').get('exports')
+    s = RestServer(exports, host, port, args.debug, args.reload)
+    s.serve()
+
+    sys.exit(0)
