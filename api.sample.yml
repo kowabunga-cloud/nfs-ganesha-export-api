@@ -1,0 +1,5 @@
+http:
+  host: 0.0.0.0
+  port: 54934
+nfs:
+  exports: /etc/ganesha/export.d/api.conf
