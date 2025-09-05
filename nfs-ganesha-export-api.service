@@ -1,0 +1,16 @@
+[Unit]
+Description=NFS Ganesha Exports REST API Server
+Documentation=https://github.com/kowabunga-cloud/nfs-ganesha-export-api
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Restart=always
+User=root
+ExecStart=/usr/bin/nfs-ganesha-export-api -c /etc/ganesha/api.yml
+ExecReload=/bin/kill -HUP $MAINPID
+TimeoutStopSec=20s
+SendSIGKILL=no
+
+[Install]
+WantedBy=multi-user.target
