@@ -1,0 +1,2 @@
+api.yml /etc/ganesha
+nfs-ganesha-export-api.service lib/systemd/system

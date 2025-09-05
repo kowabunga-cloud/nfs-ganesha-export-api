@@ -1,0 +1,18 @@
+Source: nfs-ganesha-export-api
+Section: python
+Priority: extra
+Maintainer: The Kowabunga Project <maintainers@kowabunga.cloud>
+Uploaders: The Kowabunga Project <maintainers@kowabunga.cloud>
+Build-Depends: debhelper (>= 10),
+   dh-python,
+   python3-all,
+   python3-setuptools
+Standards-Version: 3.9.2
+Xs-Vcs-Git: https://github.com/kowabunga-cloud/nfs-ganesha-export-api
+
+Package: nfs-ganesha-export-api
+Architecture: all
+Depends: ${misc:Depends},
+   ${python3:Depends},
+   python3-bottle
+Description: NFS Ganesha Export API Server provides a REST interface to perform CRUD operations and manage NFS Ganesha's server exports, generating the appropriate configuration file.

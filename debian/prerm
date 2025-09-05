@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ -e "/lib/systemd/system/nfs-ganesha-export-api.service" ]; then
+    echo 'Stopping nfs-ganesha-export-api...'
+    systemctl stop nfs-ganesha-export-api
+fi
+
+if pgrep nfs-ganesha-export-api >/dev/null; then
+    echo "Stopping nfs-ganesha-export-api..."
+    killall nfs-ganesha-export-api
+fi
+
+exit 0
+
