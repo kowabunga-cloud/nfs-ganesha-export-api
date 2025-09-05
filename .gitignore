@@ -68,3 +68,7 @@ target/
 build/
 node_modules/
 runtime/
+
+sample.conf
+api.local.yml
+debian/changelog
