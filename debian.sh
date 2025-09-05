@@ -16,5 +16,4 @@ ${CHANGES}
 EOF
 
 sed -i 's%^-%  \*%g' debian/changelog
-sudo mk-build-deps --install --tool='apt-get -o Debug::pkgProblemResolver=yes --no-install-recommends --yes' debian/control
 fakeroot debian/rules binary

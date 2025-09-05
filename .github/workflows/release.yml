@@ -28,7 +28,7 @@ jobs:
         build
         --user
     - name: Install build requirements
-      run: sudo apt-get -y install devscripts debhelper
+      run: sudo apt-get -y install debhelper dh-python python3-all python3-setuptools python3-bottle
     - name: Build Debian package
       run: ./debian.sh
     - name: Release Debian Package
