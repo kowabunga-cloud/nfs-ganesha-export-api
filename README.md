@@ -13,7 +13,7 @@
 This program is a simple REST API web server, exposing management and configuration of Ganesha NFS exports configuration.
 
 [![License: Apache License, Version 2.0](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://spdx.org/licenses/Apache-2.0.html)
-[![PyPi page link -- version](https://img.shields.io/pypi/v/kowabunga.svg)](https://pypi.python.org/pypi/nfs-ganesha-export-api)
+[![PyPi page link -- version](https://img.shields.io/pypi/v/nfs-ganesha-export-api.svg)](https://pypi.python.org/pypi/nfs-ganesha-export-api)
 <img src="https://img.shields.io/badge/python-3.8 | 3.9 | 3.10 | 3.11 | 3.12-blue.svg" alt="python">
 [![Build Status](https://github.com/kowabunga-cloud/nfs-ganesha-export-api/actions/workflows/python.yml/badge.svg)](https://github.com/kowabunga-cloud/nfs-ganesha-export-api/actions/workflows/python.yml)
 
