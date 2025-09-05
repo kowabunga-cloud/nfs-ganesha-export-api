@@ -28,7 +28,7 @@ jobs:
         build
         --user
     - name: Install build requirements
-      run: sudo apt-get -y install debhelper
+      run: sudo apt-get -y install devscripts debhelper
     - name: Build Debian package
       run: ./debian.sh
     - name: Release Debian Package
